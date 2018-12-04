@@ -27,5 +27,8 @@ public class Room {
     {
         occupant = null;
     }
+    public String toString(){
+        return "{ }";
+    }
 }
 
