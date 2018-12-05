@@ -14,7 +14,7 @@ public class Room {
      */
     public void enterRoom(Person x)
     {
-        System.out.println("You enter a plain old room");
+        System.out.println("You entered a regular room. No villains here!");
         occupant = x;
         x.setxLoc(this.xLoc);
         x.setyLoc(this.yLoc);
