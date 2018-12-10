@@ -17,7 +17,7 @@ public class Board {
         for(int i =0; i < map.length;i++){
             row = " ";
             for(int j = 0; j < map[i].length; j++){
-                row += map[i][j].toString();}
+                row += map[i][j].toString()+"/n";}
             System.out.println(row);
             }
         }
