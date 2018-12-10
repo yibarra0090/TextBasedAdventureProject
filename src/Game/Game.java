@@ -10,6 +10,6 @@ public class Game {
     {
         Room[][]map1 = new Room[8][8];
         Board map = new Board(map1);
+        System.out.println(map1);
     }
-
 }
