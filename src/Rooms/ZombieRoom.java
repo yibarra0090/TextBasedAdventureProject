@@ -12,9 +12,9 @@ public class ZombieRoom extends Room {
         occupant = x;
         x.setxLoc(this.xLoc);
         x.setyLoc(this.yLoc);
-        System.out.println("Ghost time!");
+        System.out.println("Zombie! Watch Out!");
     }
     public String toSting(){
-        return "{V}";
+        return "{Z}";
     }
 }
