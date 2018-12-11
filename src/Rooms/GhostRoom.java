@@ -14,7 +14,7 @@ public class GhostRoom extends Room {
         x.setyLoc(this.yLoc);
         System.out.println("Ghost time!");
     }
-    public String toSting(){
+    public String toString(){
         return "{G}";
     }
 }

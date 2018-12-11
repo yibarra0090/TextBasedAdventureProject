@@ -14,7 +14,7 @@ public class ZombieRoom extends Room {
         x.setyLoc(this.yLoc);
         System.out.println("Zombie! Watch Out!");
     }
-    public String toSting(){
+    public String toString(){
         return "{Z}";
     }
 }
