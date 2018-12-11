@@ -2,10 +2,10 @@ package Rooms;
 import Person.Person;
 import Person.Person;
 
-public class GhostRoom extends Room {
+public class ZombieRoom extends Room {
     Person occupant;
     int xLoc,yLoc;
-    public GhostRoom(int x, int y){
+    public ZombieRoom(int x, int y){
         super(x,y);
     }
     public void enterRoom(Person x){
@@ -15,6 +15,6 @@ public class GhostRoom extends Room {
         System.out.println("Ghost time!");
     }
     public String toSting(){
-        return "{G}";
+        return "{V}";
     }
 }
