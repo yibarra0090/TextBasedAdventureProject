@@ -2,14 +2,23 @@ package Game;
 import Board.Board;
 import Person.Person;
 import Game.Game;
+import Rooms.GhostRoom;
 import Rooms.Room;
+import Rooms.ZombieRoom;
 
 public class Game {
     private static boolean gameOn = true;
     public static void main(String[] args)
     {
-        Room[][]map1 = new Room[8][8];
+        Room[][]map1 = new Room[10][10];
+        int a = (int)(Math.random()*map1.length);
+        int b = (int)(Math.random()*map1.length);
+        map1[a][b] = new ZombieRoom(a,b);
+        int q = (int)(Math.random()*map1.length);
+        int t = (int)(Math.random()*map1.length);
+        map1[q][t] = new GhostRoom(q,t);
         Board map = new Board(map1);
+        map.print();
     }
     public static boolean validMove(String move, Person p, Room[][] map)
     {
