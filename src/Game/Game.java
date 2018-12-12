@@ -10,15 +10,15 @@ public class Game {
     private static boolean gameOn = true;
     public static void main(String[] args)
     {
-        Room[][]map1 = new Room[10][10];
+        Room[][]map1 = new Room[8][8];
 
         Board map = new Board(map1);
-        map.print();
         Person player1 = new Person(0,0);
         map1[0][0].enterRoom(player1);
         Scanner in = new Scanner(System.in);
         while(gameOn)
         {
+            map.print();
             System.out.println("Where would you like to move? (Choose N, S, E, W)");
             String move = in.nextLine();
             if(validMove(move, player1, map1))

@@ -15,9 +15,19 @@ public class Board {
             }
             int a = (int)(Math.random()*map.length);
             int b = (int)(Math.random()*map.length);
+            if (a == b){
+                while (a == b){
+                     b = (int)(Math.random()*map.length);
+                }
+            }
             map[a][b] = new ZombieRoom(a,b);
             int q = (int)(Math.random()*map.length);
             int t = (int)(Math.random()*map.length);
+            if (q == t){
+                while (q == t){
+                    q = (int)(Math.random()*map.length);
+                }
+            }
             map[q][t] = new GhostRoom(q,t);
         }
     }
