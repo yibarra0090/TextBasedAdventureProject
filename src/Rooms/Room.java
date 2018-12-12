@@ -3,6 +3,7 @@ import Person.Person;
 public class Room {
     Person occupant;
     int xLoc,yLoc;
+    boolean isThere = false;
     public Room(int x, int y)
     {
         xLoc = x;
@@ -18,6 +19,7 @@ public class Room {
         occupant = x;
         x.setxLoc(this.xLoc);
         x.setyLoc(this.yLoc);
+        isThere = true;
     }
     /**
      * Removes the player from the room.
@@ -28,7 +30,11 @@ public class Room {
         occupant = null;
     }
     public String toString(){
-        return "{ }";
+        if (isThere){
+        return "{*}";}
+        else{
+            return "{ }";
+        }
     }
 }
 

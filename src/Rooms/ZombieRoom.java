@@ -19,10 +19,12 @@ public class ZombieRoom extends Room {
         System.out.println("To defeat it, answer this question:"+" "+math[0][rand]);
         Scanner in = new Scanner(System.in);
         String ans = in.nextLine();
-        while (!ans.equals(math[1][rand])){
+        boolean correctAnswer=false;
+        while (correctAnswer == false){
             if (ans.equals(math[1][rand])){
                 System.out.println("Good job, you defeated the zombie!");
                 alive = false;
+                correctAnswer=true;
         } else {
                 System.out.println("Keep trying!");
             }
