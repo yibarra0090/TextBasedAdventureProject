@@ -1,7 +1,9 @@
 package Person;
-
+import Items.Key;
 public class Person {
     int xLoc, yLoc;
+    public int health = 10;
+    public Key [] keys = new Key[2];
     public int getxLoc() {
         return xLoc;
     }

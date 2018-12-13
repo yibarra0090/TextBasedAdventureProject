@@ -1,6 +1,7 @@
 package Board;
 import Rooms.GhostRoom;
 import Rooms.Room;
+import Rooms.Rooms;
 import Rooms.ZombieRoom;
 
 public class Board {
@@ -11,7 +12,7 @@ public class Board {
         {
             for (int y = 0; y < this.map[x].length; y++)
             {
-                this.map[x][y] = new Room(x,y);
+                this.map[x][y] = new Rooms(x,y);
             }
             int a = (int)(Math.random()*map.length);
             int b = (int)(Math.random()*map.length);

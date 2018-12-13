@@ -11,7 +11,6 @@ public class Game {
     public static void main(String[] args)
     {
         Room[][]map1 = new Room[8][8];
-
         Board map = new Board(map1);
         Person player1 = new Person(0,0);
         map1[0][0].enterRoom(player1);

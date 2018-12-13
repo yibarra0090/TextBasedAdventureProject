@@ -1,8 +1,9 @@
 package Rooms;
+import Game.Game;
 import Person.Person;
 import Person.Person;
 import java.util.Scanner;
-public class ZombieRoom extends Room {
+public class ZombieRoom extends Rooms implements Room {
     Person occupant;
     int xLoc,yLoc;
     boolean alive = true;
@@ -21,12 +22,20 @@ public class ZombieRoom extends Room {
         String ans = in.nextLine();
         boolean correctAnswer=false;
         while (correctAnswer == false){
-            if (ans.equals(math[1][rand])){
+            if (x.health <= 0){
+                System.out.println("You died! Game Over!");
+                Game.gameOff();
+                break;
+            }
+            else if (ans.equals(math[1][rand])){
                 System.out.println("Good job, you defeated the zombie!");
                 alive = false;
                 correctAnswer=true;
         } else {
                 System.out.println("Keep trying!");
+                x.health = x.health-2;
+                System.out.println("Your health is now: " + ""+x.health);
+                ans = in.nextLine();
             }
         }
     }
