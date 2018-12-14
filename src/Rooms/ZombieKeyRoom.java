@@ -18,11 +18,11 @@ public class ZombieKeyRoom extends Room implements Key {
 
     public void enterRoom(Person x)
     {
-        System.out.println("This room contains a Zombie key!");
         occupant = x;
         x.setxLoc(this.xLoc);
         x.setyLoc(this.yLoc);
         isThere = true;
+        System.out.println("This room contains a Zombie key!");
     }
     /**
      * Removes the player from the room.

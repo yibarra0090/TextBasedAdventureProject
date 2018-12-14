@@ -17,7 +17,7 @@ public class ZombieRoom extends Room {
         if (x.ZombieKey == true){
             hasKey = true;
         }
-        if (hasKey){
+        if (hasKey == true){
             String [][] math = {{"(9+1)^2-7","8*3+4+3-2","16^0.5+6+3+12"},{"93","29","25"}};
             int rand = (int)((Math.random()*2)+1);
             System.out.println("Zombie! Watch Out!");

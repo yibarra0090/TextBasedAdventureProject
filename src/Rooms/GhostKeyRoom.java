@@ -18,11 +18,11 @@ public class GhostKeyRoom extends Room implements Key {
     }
     public void enterRoom(Person x)
     {
-        System.out.println("This room contains a Ghostkey!");
         occupant = x;
         x.setxLoc(this.xLoc);
         x.setyLoc(this.yLoc);
         isThere = true;
+        System.out.println("This room contains a Ghostkey!");
     }
     /**
      * Removes the player from the room.
