@@ -1,6 +1,5 @@
 package Items;
-
+import Person.Person;
 public interface Key {
-    String getKey();
-    String getName();
+    boolean hasKey(Person x);
 }

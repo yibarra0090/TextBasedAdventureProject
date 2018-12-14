@@ -1,9 +1,8 @@
 package Rooms;
 import Game.Game;
 import Person.Person;
-import Person.Person;
 import java.util.Scanner;
-public class ZombieRoom extends Rooms implements Room {
+public class ZombieRoom extends Room {
     Person occupant;
     int xLoc,yLoc;
     boolean alive = true;
@@ -14,31 +13,40 @@ public class ZombieRoom extends Rooms implements Room {
         occupant = x;
         x.setxLoc(this.xLoc);
         x.setyLoc(this.yLoc);
-        String [][] math = {{"(9+1)^2-7","8*3+4+3-2","16^0.5+6+3+12"},{"93","29","25"}};
-        int rand = (int)((Math.random()*2)+1);
-        System.out.println("Zombie! Watch Out!");
-        System.out.println("To defeat it, answer this question:"+" "+math[0][rand]);
-        Scanner in = new Scanner(System.in);
-        String ans = in.nextLine();
-        boolean correctAnswer=false;
-        while (correctAnswer == false){
-            if (x.health <= 0){
-                System.out.println("You died! Game Over!");
-                Game.gameOff();
-                break;
-            }
-            else if (ans.equals(math[1][rand])){
-                System.out.println("Good job, you defeated the zombie!");
-                alive = false;
-                correctAnswer=true;
-        } else {
-                System.out.println("Keep trying!");
-                x.health = x.health-2;
-                System.out.println("Your health is now: " + ""+x.health);
-                ans = in.nextLine();
+        boolean hasKey = false;
+        if (x.ZombieKey == true){
+            hasKey = true;
+        }
+        if (hasKey){
+            String [][] math = {{"(9+1)^2-7","8*3+4+3-2","16^0.5+6+3+12"},{"93","29","25"}};
+            int rand = (int)((Math.random()*2)+1);
+            System.out.println("Zombie! Watch Out!");
+            System.out.println("To defeat it, answer this question:"+" "+math[0][rand]);
+            Scanner in = new Scanner(System.in);
+            String ans = in.nextLine();
+            boolean correctAnswer=false;
+            while (correctAnswer == false){
+                if (x.health <= 0){
+                    System.out.println("You died! Game Over!");
+                    Game.gameOff();
+                    break;
+                }
+                else if (ans.equals(math[1][rand])){
+                    System.out.println("Good job, you defeated the zombie!");
+                    alive = false;
+                    correctAnswer=true;
+                } else {
+                    System.out.println("Keep trying!");
+                    x.health = x.health-2;
+                    System.out.println("Your health is now: " + ""+x.health);
+                    ans = in.nextLine();
+                }
             }
         }
-    }
+            else{
+                System.out.println("Get the Key!");
+            }
+        }
     public String toString(){
         if (alive){
             return "{Z}";

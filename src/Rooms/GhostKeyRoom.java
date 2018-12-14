@@ -1,21 +1,24 @@
 package Rooms;
 import Person.Person;
-public class Rooms implements Room {
+import Items.Key;
+
+
+public class GhostKeyRoom extends Room implements Key {
     Person occupant;
     int xLoc,yLoc;
-    boolean isThere = false;
-    public Rooms(int x, int y)
-    {
-        xLoc = x;
-        yLoc = y;
+    boolean alive = true;
+    public GhostKeyRoom(int x, int y){
+        super(x,y);
     }
-    /**
-     * Method controls the results when a person enters this room.
-     * @param x the Person entering
-     */
+    public boolean hasKey(Person x) {
+        if (isThere == true){
+            x.GhostKey = true;
+        }
+        return x.GhostKey;
+    }
     public void enterRoom(Person x)
     {
-        System.out.println("You entered a regular room. No villains here!");
+        System.out.println("This room contains a Ghostkey!");
         occupant = x;
         x.setxLoc(this.xLoc);
         x.setyLoc(this.yLoc);
@@ -31,9 +34,9 @@ public class Rooms implements Room {
     }
     public String toString(){
         if (isThere){
-        return "{*}";}
+            return "{*}";}
         else{
-            return "{ }";
+            return "{?}";
         }
     }
 }

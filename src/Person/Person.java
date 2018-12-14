@@ -3,7 +3,8 @@ import Items.Key;
 public class Person {
     int xLoc, yLoc;
     public int health = 10;
-    public Key [] keys = new Key[2];
+    public boolean GhostKey = false;
+    public boolean ZombieKey = false;
     public int getxLoc() {
         return xLoc;
     }

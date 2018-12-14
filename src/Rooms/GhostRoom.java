@@ -1,6 +1,6 @@
 package Rooms;
 import Game.Game;
-import Items.ZombieKey;
+import Items.Key;
 import Person.Person;
 import Person.Person;
 import org.omg.CORBA.SystemException;
@@ -8,7 +8,7 @@ import org.omg.CORBA.SystemException;
 import java.util.Scanner;
 import java.util.Scanner;
 
-public class GhostRoom extends Rooms implements Room {
+public class GhostRoom extends Room  {
     Person occupant;
     int xLoc,yLoc;
     boolean alive = true;
@@ -19,17 +19,14 @@ public class GhostRoom extends Rooms implements Room {
         occupant = x;
         x.setxLoc(this.xLoc);
         x.setyLoc(this.yLoc);
-        System.out.println("Ghost time!");
         boolean hasKey = false;
-        for (int i = 0; i < x.keys.length; i++){
-            if(x.keys[i] instanceof ZombieKey){
-                hasKey = true;
-            }
+        if (x.GhostKey == true){
+            hasKey = true;
         }
         if (hasKey){
             String [][] math = {{"(9+1)^2-7","8*3+4+3-2","16^0.5+6+3+12"},{"93","29","25"}};
             int rand = (int)((Math.random()*2)+1);
-            System.out.println("Zombie! Watch Out!");
+            System.out.println("Ghost! Watch Out!");
             System.out.println("To defeat it, answer this question:"+" "+math[0][rand]);
             Scanner in = new Scanner(System.in);
             String ans = in.nextLine();
@@ -41,7 +38,7 @@ public class GhostRoom extends Rooms implements Room {
                     break;
                 }
                 else if (ans.equals(math[1][rand])){
-                    System.out.println("Good job, you defeated the zombie!");
+                    System.out.println("Good job, you defeated the ghost!");
                     alive = false;
                     correctAnswer=true;
                 } else {
