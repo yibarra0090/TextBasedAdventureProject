@@ -4,8 +4,6 @@ import Items.Key;
 
 
 public class GhostKeyRoom extends Room implements Key {
-    Person occupant;
-    int xLoc,yLoc;
     boolean alive = true;
     public GhostKeyRoom(int x, int y){
         super(x,y);
@@ -22,6 +20,7 @@ public class GhostKeyRoom extends Room implements Key {
         x.setxLoc(this.xLoc);
         x.setyLoc(this.yLoc);
         isThere = true;
+        hasKey(x);
         System.out.println("This room contains a Ghostkey!");
     }
     /**

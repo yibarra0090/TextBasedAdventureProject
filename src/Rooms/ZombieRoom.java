@@ -3,13 +3,12 @@ import Game.Game;
 import Person.Person;
 import java.util.Scanner;
 public class ZombieRoom extends Room {
-    Person occupant;
-    int xLoc,yLoc;
     boolean alive = true;
     public ZombieRoom(int x, int y){
         super(x,y);
     }
     public void enterRoom(Person x){
+        isThere = true;
         occupant = x;
         x.setxLoc(this.xLoc);
         x.setyLoc(this.yLoc);
@@ -19,7 +18,7 @@ public class ZombieRoom extends Room {
         }
         if (hasKey == true){
             String [][] math = {{"(9+1)^2-7","8*3+4+3-2","16^0.5+6+3+12"},{"93","29","25"}};
-            int rand = (int)((Math.random()*2)+1);
+            int rand = (int)((Math.random()*2));
             System.out.println("Zombie! Watch Out!");
             System.out.println("To defeat it, answer this question:"+" "+math[0][rand]);
             Scanner in = new Scanner(System.in);

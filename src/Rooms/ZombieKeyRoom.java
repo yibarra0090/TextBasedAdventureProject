@@ -3,8 +3,6 @@ import Items.Key;
 import Person.Person;
 
 public class ZombieKeyRoom extends Room implements Key {
-    Person occupant;
-    int xLoc,yLoc;
     boolean alive = true;
     public ZombieKeyRoom(int x, int y){
         super(x,y);
@@ -22,6 +20,7 @@ public class ZombieKeyRoom extends Room implements Key {
         x.setxLoc(this.xLoc);
         x.setyLoc(this.yLoc);
         isThere = true;
+        hasKey(x);
         System.out.println("This room contains a Zombie key!");
     }
     /**

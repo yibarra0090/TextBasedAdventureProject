@@ -9,13 +9,12 @@ import java.util.Scanner;
 import java.util.Scanner;
 
 public class GhostRoom extends Room  {
-    Person occupant;
-    int xLoc,yLoc;
     boolean alive = true;
     public GhostRoom(int x, int y){
         super(x,y);
     }
     public void enterRoom(Person x){
+        this.isThere = true;
         occupant = x;
         x.setxLoc(this.xLoc);
         x.setyLoc(this.yLoc);
@@ -25,7 +24,7 @@ public class GhostRoom extends Room  {
         }
         if (hasKey){
             String [][] math = {{"(9+1)^2-7","8*3+4+3-2","16^0.5+6+3+12"},{"93","29","25"}};
-            int rand = (int)((Math.random()*2)+1);
+            int rand = (int)((Math.random()*2));
             System.out.println("Ghost! Watch Out!");
             System.out.println("To defeat it, answer this question:"+" "+math[0][rand]);
             Scanner in = new Scanner(System.in);

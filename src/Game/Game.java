@@ -10,7 +10,7 @@ public class Game {
     private static boolean gameOn = true;
     public static void main(String[] args)
     {
-        Room[][]map1 = new Room[10][10];
+        Room[][]map1 = new Room[8][8];
         Board map = new Board(map1);
         Person player1 = new Person(0,0);
         map1[0][0].enterRoom(player1);
@@ -18,6 +18,7 @@ public class Game {
         while(gameOn)
         {
             map.print();
+            map.didWin();
             System.out.println("Where would you like to move? (Choose N, E, S, W)");
             String move = in.nextLine();
             if(validMove(move, player1, map1))
@@ -27,6 +28,7 @@ public class Game {
             else {
                 System.out.println("Please choose a valid move.");
             }
+            map.didWin();
         }
         in.close();
     }
