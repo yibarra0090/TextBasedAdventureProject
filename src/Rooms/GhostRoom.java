@@ -22,6 +22,7 @@ public class GhostRoom extends Room  {
         if (x.GhostKey == true){
             hasKey = true;
         }
+        //123
         if (hasKey){
             String [][] math = {{"(9+1)^2-7","8*3+4+3-2","16^0.5+6+3+12"},{"93","29","25"}};
             int rand = (int)((Math.random()*2));
