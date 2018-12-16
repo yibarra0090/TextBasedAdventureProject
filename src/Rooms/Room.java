@@ -16,6 +16,7 @@ public class Room {
     public void enterRoom(Person x)
     {
         System.out.println("You entered a regular room. No villains here!");
+        System.out.println("Find all zombies and ghosts! Find the keys!");
         occupant = x;
         x.setxLoc(this.xLoc);
         x.setyLoc(this.yLoc);

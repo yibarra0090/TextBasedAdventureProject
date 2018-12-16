@@ -8,6 +8,9 @@ import Rooms.ZombieRoom;
 import java.util.Scanner;
 public class Game {
     private static boolean gameOn = true;
+    /*
+    Initiates the board and game
+     */
     public static void main(String[] args)
     {
         Room[][]map1 = new Room[8][8];
@@ -15,6 +18,14 @@ public class Game {
         Person player1 = new Person(0,0);
         map1[0][0].enterRoom(player1);
         Scanner in = new Scanner(System.in);
+        System.out.print("Hello player! This game is simple, move around the board, and collect two keys, the ZombieKey and the GhostKey!"+"\n");
+        System.out.print("Then, find all the rooms containing zombies and ghosts!"+"\n");
+        System.out.print("To defeat them, answer their math question!"+"\n");
+        System.out.print("You start with a 10 health bar, everytime you get a question wrong, it decreases by 2. It's game over if you die!"+"\n");
+        System.out.print("To win, defeat all zombies and ghosts! Good luck!"+"\n");
+        /*
+        Game operates
+         */
         while(gameOn)
         {
             map.print();
@@ -32,7 +43,9 @@ public class Game {
         }
         in.close();
     }
-
+    /*
+    Controls for game
+     */
     public static boolean validMove(String move, Person p, Room[][] map)
     {
         move = move.toLowerCase().trim();
@@ -88,6 +101,9 @@ public class Game {
         }
         return true;
     }
+    /*
+    Turns off game
+     */
     public static void gameOff()
     {
         gameOn = false;
