@@ -30,6 +30,9 @@ public class Room {
     {
         occupant = null;
     }
+    /*
+    Prints if player has been there
+     */
     public String toString(){
         if (isThere){
         return "{*}";}

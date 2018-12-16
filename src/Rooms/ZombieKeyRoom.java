@@ -3,7 +3,6 @@ import Items.Key;
 import Person.Person;
 
 public class ZombieKeyRoom extends Room implements Key {
-    boolean alive = true;
     public ZombieKeyRoom(int x, int y){
         super(x,y);
     }
@@ -13,7 +12,10 @@ public class ZombieKeyRoom extends Room implements Key {
        }
        return x.ZombieKey;
     }
-
+    /**
+     * Method controls the results when a person enters this room.
+     * @param x the Person entering
+     */
     public void enterRoom(Person x)
     {
         occupant = x;

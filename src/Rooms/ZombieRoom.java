@@ -7,6 +7,10 @@ public class ZombieRoom extends Room {
     public ZombieRoom(int x, int y){
         super(x,y);
     }
+    /**
+     * Method controls the results when a person enters this room. Checks if the player has the key, and asks math question
+     * @param x the Person entering
+     */
     public void enterRoom(Person x){
         isThere = true;
         occupant = x;
@@ -46,6 +50,9 @@ public class ZombieRoom extends Room {
                 System.out.println("Get the Key!");
             }
         }
+        /*
+        Prints zombie on board
+         */
     public String toString(){
         if (alive){
             return "{Z}";

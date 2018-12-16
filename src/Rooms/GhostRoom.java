@@ -13,6 +13,10 @@ public class GhostRoom extends Room  {
     public GhostRoom(int x, int y){
         super(x,y);
     }
+    /**
+     * Method controls the results when a person enters this room. Checks if the player has the key, and asks math question
+     * @param x the Person entering
+     */
     public void enterRoom(Person x){
         this.isThere = true;
         occupant = x;
@@ -52,6 +56,9 @@ public class GhostRoom extends Room  {
             System.out.println("Get the Key!");
         }
     }
+    /*
+    Prints Ghost on board
+     */
     public String toString(){
         if (alive){
             return "{G}";

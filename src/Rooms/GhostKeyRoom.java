@@ -4,16 +4,19 @@ import Items.Key;
 
 
 public class GhostKeyRoom extends Room implements Key {
-    boolean alive = true;
     public GhostKeyRoom(int x, int y){
         super(x,y);
     }
+    /*
+    Key is given to the player
+     */
     public boolean hasKey(Person x) {
         if (isThere == true){
             x.GhostKey = true;
         }
         return x.GhostKey;
     }
+
     public void enterRoom(Person x)
     {
         occupant = x;
