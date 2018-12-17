@@ -1,6 +1,7 @@
 package Board;
 import Game.Game;
 import Rooms.*;
+import Person.Person;
 public class Board {
     public static Room[][] map;
     int x;
@@ -47,12 +48,15 @@ public class Board {
         }
         //Generates more than one Ghost and Zombie rooms in random locations
         for (int i = 0; i <4 ; i++){
-            int a = rand();
-            int b = rand();
+            int a = 0;
+            int b = 0;
+            a = rand();
+            b = rand();
             map[a][b] = new ZombieRoom(a, b);
             int q = rand();
             int t = rand();
             map[q][t] = new GhostRoom(q, t);
+
         }
         //Generates location of both keys
         int s = rand();
