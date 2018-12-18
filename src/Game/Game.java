@@ -18,7 +18,7 @@ public class Game {
         Person player1 = new Person(0,0);
         map1[0][0].enterRoom(player1);
         Scanner in = new Scanner(System.in);
-        System.out.print("Hello player! This game is simple, move around the board, and collect two keys, the ZombieKey and the GhostKey!"+"\n");
+        System.out.print("Hello player, this is a Haunted Math Mansion! This game is simple, move around the board, and collect two keys, the ZombieKey and the GhostKey!"+"\n");
         System.out.print("Then, find all the rooms containing zombies and ghosts!"+"\n");
         System.out.print("To defeat them, answer their math question!"+"\n");
         System.out.print("You start with a 10 health bar, everytime you get a question wrong, it decreases by 2. It's game over if you die!"+"\n");

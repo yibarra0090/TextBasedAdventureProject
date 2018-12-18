@@ -17,6 +17,7 @@ public class Board {
             }
         }
         for (int i = 0; i <4 ; i++){
+
             int a = rand();
             int b = rand();
             map[a][b] = new ZombieRoom(a, b);
@@ -50,11 +51,17 @@ public class Board {
         for (int i = 0; i <4 ; i++){
             int a = 0;
             int b = 0;
-            a = rand();
-            b = rand();
+            while((a == 1 || a == 0)&&(b == 1 || b == 0)){ //Ensures player isnt trapped
+                a = rand();
+                b = rand();
+           }
             map[a][b] = new ZombieRoom(a, b);
-            int q = rand();
-            int t = rand();
+            int q = 0;
+            int t = 0;
+            while((q == 1 || q == 0)&&(t == 1 || t == 0)){ //Ensures player isnt trapped
+                q = rand();
+                t = rand();
+            }
             map[q][t] = new GhostRoom(q, t);
 
         }
