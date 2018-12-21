@@ -28,9 +28,9 @@ public class GhostRoom extends Room  {
         }
         if (hasKey){
             String [][] math = {{"(9+1)^2-7","8*3+4+3-2","16^0.5+6+3+12","23+23^2-5^2+9","(100!)/(99!)","ln(e^x)","((900!)/(899!))*0.5"},{"93","29","25","536","100","x","450"}};
-            int rand = (int)((Math.random()*8));
+            int rand = (int)((Math.random()*7));
             System.out.println("Ghost! Watch Out!");
-            System.out.println("To defeat it, answer this question:"+" "+math[0][rand]);
+            System.out.println("To defeat it, answer this question:" + " " + math[0][rand]);
             Scanner in = new Scanner(System.in);
             String ans = in.nextLine();
             boolean correctAnswer=false;
